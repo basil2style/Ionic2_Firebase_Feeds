@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-@Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
-})
 
 const data = [{
   title : 'post1',
@@ -22,11 +18,16 @@ const data = [{
 }]
 
 
+@Component({
+  selector: 'page-home',
+  templateUrl: 'home.html'
+})
 
 export class HomePage {
 
+  posts: any
   constructor(public navCtrl: NavController) {
-
+    this.posts = data
   }
 
 }
