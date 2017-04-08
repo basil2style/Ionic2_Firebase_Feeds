@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the Post page.
@@ -7,32 +7,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 
-class Posts {
+@Component({
+  selector: 'page-post',
+  templateUrl: 'post.html',
+})
+export class Post {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad Post');
+  }
+
+   post: Posts = new Posts()
+  
+
+  submit() {
+    this.navCtrl.parent.select(0)
+  }
+
+}
+
+class Posts{
   title: string
   body: string
   id: string
 
   constructor() {}
-}
-@Component({
-  selector: 'page-post',
-  templateUrl: 'post.html',
-})
-
-export class Post {
-
-  post:Posts = new Posts()
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  submit() {
-    this.navCtrl.parent.select(0)
-  }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Post');
-  }
-
 }
