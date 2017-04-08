@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { Data } from '../../providers/data';
 /**
  * Generated class for the Post page.
  *
@@ -14,7 +14,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class Post {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _data: Data) {
   }
 
   ionViewDidLoad() {
@@ -25,6 +25,8 @@ export class Post {
   
 
   submit() {
+    this._data.addPost(this.post);
+    this.post = new Posts()
     this.navCtrl.parent.select(0)
   }
 
