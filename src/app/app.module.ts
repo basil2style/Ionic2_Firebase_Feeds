@@ -11,6 +11,17 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Data } from '../providers/data';
+import { AngularFireModule } from "angularfire2";
+
+ var config = {
+    apiKey: "AIzaSyAc2H6h1VZ8i7KBaqX7y1g5LZjfMiKJT6o",
+    authDomain: "feed-3fe63.firebaseapp.com",
+    databaseURL: "https://feed-3fe63.firebaseio.com",
+    projectId: "feed-3fe63",
+    storageBucket: "feed-3fe63.appspot.com",
+    messagingSenderId: "483640610481"
+  };
+  
 
 @NgModule({
   declarations: [
@@ -23,7 +34,8 @@ import { Data } from '../providers/data';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
