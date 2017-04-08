@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Data } from '../../providers/data';
+//import { Data } from '../../providers/data';
+import { AngularFire } from "angularfire2";
 /**
  * Generated class for the Post page.
  *
@@ -14,7 +15,7 @@ import { Data } from '../../providers/data';
 })
 export class Post {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public _data: Data) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af:AngularFire) {
   }
 
   ionViewDidLoad() {
@@ -25,7 +26,8 @@ export class Post {
   
 
   submit() {
-    this._data.addPost(this.post);
+    //this._data.addPost(this.post);
+    this.af.database.list('/posts').push(this.post)
     this.post = new Posts()
     this.navCtrl.parent.select(0)
   }
