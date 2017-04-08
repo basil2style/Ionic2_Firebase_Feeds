@@ -11,7 +11,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Data } from '../providers/data';
-import { AngularFireModule } from "angularfire2";
+import { AngularFireModule } from 'angularfire2';
+import { Connection } from '../components/connection/connection';
+
 
  var config = {
     apiKey: "AIzaSyAc2H6h1VZ8i7KBaqX7y1g5LZjfMiKJT6o",
@@ -30,7 +32,8 @@ import { AngularFireModule } from "angularfire2";
     ContactPage,
     HomePage,
     Post,
-    TabsPage
+    TabsPage,
+    Connection
   ],
   imports: [
     BrowserModule,

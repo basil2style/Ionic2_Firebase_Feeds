@@ -33,7 +33,7 @@ export class HomePage {
     // this._data.Posts.subscribe((post) => {
     //   this.posts.push(post)
     // })
-    this.posts = af.database.list('/post')
+    this.posts = af.database.list('/posts')
 
   }
 
