@@ -11,8 +11,18 @@ import {ReplaySubject} from 'rxjs';
 @Injectable()
 export class Data {
 
+  posts: ReplaySubject<{}> = new ReplaySubject<{}>()
   constructor() {
     console.log('Hello Data Provider');
   }
+
+  get Posts() {
+    return this.posts
+  }
+
+  addPost(posts) {
+    return this.posts.next(posts)
+  }
+  
 
 }
